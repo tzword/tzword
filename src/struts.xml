@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="SSH2" extends="struts-default">
+		<action name="userAction" class="com.youying.western.action.UserAction">
+			<result name="list">/jsp/user/searchUser.jsp</result>
+			<result name="toUpdateUser">/jsp/user/editUser.jsp</result>
+			<result name="addUser">/jsp/user/addUser.jsp</result>
+			<result name="updateUser">/jsp/user/searchUser.jsp</result>
+		</action>
+		<action name="loginAction" class="com.youying.western.action.LoginAction">
+			<result name="login">/login.jsp</result>
+			<result name="menu">/main.jsp</result>
+			<result name="toLogin">/login.jsp</result>
+			<result name="left">/main.jsp</result>
+		</action>
+		<action name="roleAction" class="com.youying.western.action.RoleAction">
+			<result name="list">/jsp/role/searchRole.jsp</result>
+			<result name="toUpdateRole">/jsp/role/editRole.jsp</result>
+			<result name="addRole">/jsp/role/addRole.jsp</result>
+			<result name="updateRole">/jsp/role/searchRole.jsp</result>
+		</action>
+		<action name="permissionAction" class="com.youying.western.action.PermissionAction">
+			<result name="list">/jsp/user/searchPermission.jsp</result>
+			<result name="toUpdatePermission">/jsp/user/editPermission.jsp</result>
+		</action>
+	</package>
+</struts>

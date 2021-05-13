@@ -171,8 +171,14 @@ public class DataToExcelWorkWiki {
 						string[1] = zdlx;
 					}
 				}else{
-					//如果字符串长度有值，那字段类型就是 字段类型（字符串长度）
-					string[1] = zdlx + "("+ zfccd +")";
+					//如果是text就不显示长度
+					if (zfccd.equals("65535")){
+						string[1] = zdlx;
+					}else{
+						//如果字符串长度有值，那字段类型就是 字段类型（字符串长度）
+						string[1] = zdlx + "("+ zfccd +")";
+					}
+
 				}
 				//是否为空
 				String sfwk = rs.getString(6);
@@ -292,8 +298,7 @@ public class DataToExcelWorkWiki {
 					cell.setCellStyle(style);
 				}
 
-				row.getCell((short) 0).setCellValue(
-						"数据库表" + list.get(0).toString());
+				row.getCell((short) 0).setCellValue(list.get(0).toString());
 				
 				
 				HSSFFont hlink_font = wb.createFont();
@@ -315,6 +320,7 @@ public class DataToExcelWorkWiki {
 					// 创建多列并设置每一列的值和宽度
 					cell = row.createCell((short) i);
 					cell.setCellValue(new HSSFRichTextString(tableFiled[i]));
+					cell.setCellStyle(style);
 					s.setColumnWidth((short) i, (short) 5000);
 				}
 				List list2 = (List) list.get(1);

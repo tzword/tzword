@@ -17,7 +17,7 @@ public class ConnectionMysql {
 	//数据库驱动
 	String sd = "com.mysql.cj.jdbc.Driver";
 	//连接地址
-	String sc = "jdbc:mysql://localhost:3306/video_algorithm?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT&useSSL=false";
+	String sc = "jdbc:mysql://localhost:3306/jg?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT&useSSL=false";
 	//用户名
 	String userName = "root";
 	//密码
